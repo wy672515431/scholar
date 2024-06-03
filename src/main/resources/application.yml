@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: scholar
+
+  elasticsearch:
+    uris: localhost:9200
+    connection-timeout: 10s
+    username: wy
+    password: 123456
+
