@@ -39,7 +39,7 @@ public class ProjectService implements IProjectService {
     }
 
     @Override
-    public ResponseEntity<Response> getProjectListByKeyword(String keyword, String page, String size) {
+    public ResponseEntity<Response<Map<String, Object>>> getProjectListByKeyword(String keyword, String page, String size) {
         int pageNum = Integer.parseInt(page);
         int sizeNum = Integer.parseInt(size);
 
@@ -88,6 +88,6 @@ public class ProjectService implements IProjectService {
         Map<String, Object> responseMap = new HashMap<>();
         responseMap.put("projectList", projects);
         responseMap.put("total", search.getTotalHits());
-        return ResponseEntity.ok(new Response(responseMap));
+        return ResponseEntity.ok(new Response<>(responseMap));
     }
 }

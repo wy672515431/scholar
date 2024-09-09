@@ -3,8 +3,6 @@ spring:
     name: scholar
 
   elasticsearch:
-    uris: localhost:9200
+    uris: 47.94.192.219:9200
     connection-timeout: 10s
-    username: wy
-    password: 123456
 

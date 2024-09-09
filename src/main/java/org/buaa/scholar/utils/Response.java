@@ -2,34 +2,34 @@ package org.buaa.scholar.utils;
 
 import java.util.Date;
 
-public class Response {
+public class Response<T> {
     private int code;
     private String message;
-    private Object data;
+    private T data;
     private Date time;
 
-    public Response(Object data) {
+    public Response(T data) {
         this.code = 1001;
         this.message = "请求成功！";
         this.data = data;
         this.time = new Date();
     }
 
-    public Response(int code, Object data) {
+    public Response(int code, T data) {
         this.code = code;
         this.message = "";
         this.data = data;
         this.time = new Date();
     }
 
-    public Response(String message, Object data) {
+    public Response(String message, T data) {
         this.code = 1001;
         this.message = message;
         this.data = data;
         this.time = new Date();
     }
 
-    public Response(int code, String message, Object data) {
+    public Response(int code, String message, T data) {
         this.code = code;
         this.message = message;
         this.data = data;
@@ -52,11 +52,11 @@ public class Response {
         this.message = message;
     }
 
-    public Object getData() {
+    public T getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(T data) {
         this.data = data;
     }
 
@@ -66,5 +66,15 @@ public class Response {
 
     public void setTime(Date time) {
         this.time = time;
+    }
+
+    @Override
+    public String toString() {
+        return "Response{" +
+                "code=" + code +
+                ", message='" + message + '\'' +
+                ", data=" + data +
+                ", time=" + time +
+                '}';
     }
 }
